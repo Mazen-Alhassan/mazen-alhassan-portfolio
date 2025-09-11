@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -93,7 +93,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                I'm a passionate cybersecurity researcher and full-stack developer pursuing my Bachelor's degree in 
+                I&apos;m a passionate cybersecurity researcher and full-stack developer pursuing my Bachelor&apos;s degree in 
                 Information Technology/Network Technology at Carleton University, with an expected graduation in April 2027.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
@@ -316,10 +316,10 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">Let's Connect</h2>
+          <h2 className="text-4xl font-bold text-white mb-8">Let&apos;s Connect</h2>
           <p className="text-xl text-gray-300 mb-12">
             Interested in cybersecurity research, full-stack development, or just want to chat about technology? 
-            I'd love to hear from you.
+            I&apos;d love to hear from you.
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -359,8 +359,8 @@ export default function Home() {
           <div className="bg-gradient-to-r from-purple-600/10 to-blue-600/10 p-8 rounded-2xl border border-purple-500/20">
             <h3 className="text-2xl font-semibold text-white mb-4">Ready to collaborate?</h3>
             <p className="text-gray-300 mb-6">
-              Whether you're looking for cybersecurity research collaboration, full-stack development expertise, 
-              or consulting on network security projects, I'm always excited to work on challenging problems.
+              Whether you&apos;re looking for cybersecurity research collaboration, full-stack development expertise, 
+              or consulting on network security projects, I&apos;m always excited to work on challenging problems.
             </p>
             <a 
               href="mailto:Mazen.alhassan@gmail.com?subject=Collaboration Opportunity"
