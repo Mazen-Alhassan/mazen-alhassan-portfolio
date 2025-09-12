@@ -33,7 +33,7 @@ export default function ParticleBackground() {
     const createParticles = () => {
       const particles: Particle[] = [];
       const colors = ["#3b82f6", "#8b5cf6", "#06b6d4", "#10b981", "#f59e0b"];
-      
+
       for (let i = 0; i < 50; i++) {
         particles.push({
           x: Math.random() * canvas.width,
@@ -50,7 +50,7 @@ export default function ParticleBackground() {
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       particlesRef.current.forEach((particle, index) => {
         // Update position
         particle.x += particle.vx;
@@ -60,7 +60,7 @@ export default function ParticleBackground() {
         const dx = mouseRef.current.x - particle.x;
         const dy = mouseRef.current.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distance < 100) {
           const force = (100 - distance) / 100;
           particle.vx -= (dx / distance) * force * 0.01;
@@ -89,7 +89,7 @@ export default function ParticleBackground() {
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
             ctx.strokeStyle = particle.color;
-            ctx.globalAlpha = (100 - distance) / 100 * 0.2;
+            ctx.globalAlpha = ((100 - distance) / 100) * 0.2;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

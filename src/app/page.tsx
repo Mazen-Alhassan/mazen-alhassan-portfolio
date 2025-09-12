@@ -3,21 +3,27 @@
 import { useState, useEffect } from "react";
 import ParticleBackground from "../components/ParticleBackground";
 import ProjectCard from "../components/ProjectCard";
-import { useScrollAnimation, useParallax } from "../components/ScrollAnimations";
+import CompanyLogos from "../components/CompanyLogos";
+import { useLanguage } from "../contexts/LanguageContext";
+import {
+  useScrollAnimation,
+  useParallax,
+} from "../components/ScrollAnimations";
 
 export default function Home() {
   const [, setActiveSection] = useState("hero");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
-  
+  const { language, toggleLanguage, t } = useLanguage();
+
   const heroRef = useScrollAnimation();
   const aboutRef = useScrollAnimation();
-  const experienceRef = useScrollAnimation();
+  // const experienceRef = useScrollAnimation(); // Removed as we're using CompanyLogos component
   const projectsRef = useScrollAnimation();
   const skillsRef = useScrollAnimation();
   const contactRef = useScrollAnimation();
-  
+
   const parallaxRef1 = useParallax(0.3);
   const parallaxRef2 = useParallax(0.5);
 
@@ -33,7 +39,7 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("mousemove", handleMouseMove);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
@@ -62,45 +68,64 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="text-white font-bold text-xl">MA</div>
-            <div className="hidden md:flex space-x-8">
-              {["About", "Experience", "Projects", "Skills", "Contact"].map(
-                (item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium"
-                  >
-                    {item}
-                  </button>
-                )
-              )}
+            <div className="hidden md:flex space-x-8 items-center">
+              {[
+                { key: "about", label: t("about") },
+                { key: "experience", label: t("experience") },
+                { key: "projects", label: t("projects") },
+                { key: "skills", label: t("skills") },
+                { key: "contact", label: t("contact") }
+              ].map((item) => (
+                <button
+                  key={item.key}
+                  onClick={() => scrollToSection(item.key)}
+                  className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+              
+              {/* Arabic Toggle Button */}
+              <button
+                onClick={toggleLanguage}
+                className="ml-4 px-3 py-1 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 text-white text-sm font-medium hover:from-blue-600/30 hover:to-purple-600/30 transition-all duration-300 magnetic"
+              >
+                {language === "en" ? "العربية" : "English"}
+              </button>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-        <section
-         id="hero"
-         className="min-h-screen flex items-center justify-center relative overflow-hidden"
-         ref={heroRef}
-       >
+      <section
+        id="hero"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+        ref={heroRef}
+      >
         {/* Dynamic background elements */}
-        <div 
+        <div
           className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-teal-600/20"
           style={{
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         ></div>
-        
+
         {/* Floating elements */}
-        <div ref={parallaxRef1} className="absolute top-20 left-10 animate-float">
+        <div
+          ref={parallaxRef1}
+          className="absolute top-20 left-10 animate-float"
+        >
           <div className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 blur-xl"></div>
         </div>
-        <div ref={parallaxRef2} className="absolute bottom-20 right-10 animate-float" style={{ animationDelay: '2s' }}>
+        <div
+          ref={parallaxRef2}
+          className="absolute bottom-20 right-10 animate-float"
+          style={{ animationDelay: "2s" }}
+        >
           <div className="w-32 h-32 rounded-full bg-gradient-to-r from-cyan-500/20 to-teal-500/20 blur-xl"></div>
         </div>
-        
+
         {/* Mouse follower */}
         <div
           className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-3xl pointer-events-none transition-all duration-1000 ease-out"
@@ -109,32 +134,30 @@ export default function Home() {
             top: mousePosition.y - 192,
           }}
         ></div>
-        
+
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
           <div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight gradient-text">
-              Mazen Alhassan
+              {t("heroTitle")}
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Cybersecurity Researcher & Full-Stack Developer
+              {t("heroSubtitle")}
             </p>
             <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-              Building secure systems and conducting cutting-edge research in
-              network security, MITRE ATT&CK frameworks, and threat detection at
-              Université Laval
+              {t("heroDescription")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => scrollToSection("projects")}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
               >
-                View My Work
+                {t("viewWork")}
               </button>
               <a
                 href="mailto:Mazen.alhassan@gmail.com"
                 className="border border-white/30 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-all duration-300"
               >
-                Get In Touch
+                {t("getInTouch")}
               </a>
             </div>
           </div>
@@ -151,30 +174,24 @@ export default function Home() {
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8" ref={aboutRef}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center gradient-text">
-            About Me
+            {t("aboutTitle")}
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                I&apos;m a passionate cybersecurity researcher and full-stack
-                developer pursuing my Bachelor&apos;s degree in Information
-                Technology/Network Technology at Carleton University, with an
-                expected graduation in April 2027.
+                {t("aboutText1")}
               </p>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                Currently working as a Research Intern at Université Laval, I
-                specialize in building MITRE ATT&CK-driven attack-flow
-                generators, modeling secure databases, and conducting
-                comprehensive cybersecurity research.
+                {t("aboutText2")}
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center text-gray-300">
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                  Available for opportunities
+                  {t("availableForOpportunities")}
                 </div>
                 <div className="flex items-center text-gray-300">
                   <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
-                  Based in Canada
+                  {t("basedInCanada")}
                 </div>
               </div>
             </div>
@@ -196,124 +213,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Company Logos Section */}
+      <CompanyLogos />
+
+      {/* Projects Section */}
       <section
-        id="experience"
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20"
-        ref={experienceRef}
+        id="projects"
+        className="py-20 px-4 sm:px-6 lg:px-8"
+        ref={projectsRef}
       >
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center gradient-text">
-            Experience
-          </h2>
-          <div className="space-y-8">
-            {/* Research Intern */}
-            <div className="glass-dark p-8 rounded-2xl hover:border-purple-500/50 transition-all duration-300 magnetic group">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-semibold text-white">
-                    Research Intern
-                  </h3>
-                  <p className="text-purple-400 font-medium">
-                    Université Laval
-                  </p>
-                </div>
-                <span className="text-gray-400 font-medium">
-                  Jun. 2025 – Present
-                </span>
-              </div>
-              <ul className="space-y-3 text-gray-300">
-                <li>
-                  • Built a MITRE ATT&CK-driven attack-flow generator in Python
-                  (NetworkX, Matplotlib), modeling databases and web apps for
-                  confidentiality and integrity with 30+ multi-step paths
-                </li>
-                <li>
-                  • Unified isolated paths into a stitched, capability-tagged
-                  DAG so attackers can pivot across paths mid-flow, producing
-                  one comprehensive graph instead of separate visuals
-                </li>
-                <li>
-                  • Designed a risk model (probability × impact) with
-                  per-technique metadata to score nodes and rank the most
-                  consequential attack routes
-                </li>
-                <li>
-                  • Conducted comprehensive review and analysis of 25+
-                  cybersecurity research papers to identify gaps in current
-                  attack modeling methodologies
-                </li>
-              </ul>
-            </div>
-
-            {/* IT Support Consultant */}
-            <div className="glass-dark p-8 rounded-2xl hover:border-blue-500/50 transition-all duration-300 magnetic group">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-semibold text-white">
-                    IT Support Consultant
-                  </h3>
-                  <p className="text-blue-400 font-medium">
-                    Carleton University
-                  </p>
-                </div>
-                <span className="text-gray-400 font-medium">
-                  Sep. 2024 – Apr. 2025
-                </span>
-              </div>
-              <ul className="space-y-3 text-gray-300">
-                <li>
-                  • Resolved 150+ hardware/software tickets for faculty, staff,
-                  and students across Windows 10/11 and macOS using remote tools
-                </li>
-                <li>
-                  • Provisioned and secured 200+ devices with BitLocker
-                  (Windows) and FileVault (macOS); enforced role-based access
-                  via Active Directory
-                </li>
-                <li>
-                  • Performed account administration (on/off-boarding, group
-                  membership, password resets) and wrote user-facing how-tos
-                </li>
-              </ul>
-            </div>
-
-            {/* Full Stack Dev Intern */}
-            <div className="glass-dark p-8 rounded-2xl hover:border-green-500/50 transition-all duration-300 magnetic group">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-semibold text-white">
-                    Full Stack Dev / QA Tester Intern
-                  </h3>
-                  <p className="text-green-400 font-medium">Locym</p>
-                </div>
-                <span className="text-gray-400 font-medium">
-                  Mar. 2025 – May 2025
-                </span>
-              </div>
-              <ul className="space-y-3 text-gray-300">
-                <li>
-                  • Designed and implemented a comprehensive end-to-end testing
-                  framework for a Next.js application by creating 50+ automated
-                  test cases
-                </li>
-                <li>
-                  • Reduced manual QA overhead by 60% by writing 75+ unit and
-                  integration tests and establishing GitHub Actions CI pipelines
-                </li>
-                <li>
-                  • Improved production system reliability by 40% by
-                  investigating 15+ critical production issues, implementing
-                  targeted testing strategies
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-        {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8" ref={projectsRef}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Featured Projects
@@ -328,12 +236,12 @@ export default function Home() {
               techColors={[
                 "bg-red-500/20 text-red-300",
                 "bg-orange-500/20 text-orange-300",
-                "bg-blue-500/20 text-blue-300"
+                "bg-blue-500/20 text-blue-300",
               ]}
               features={[
                 "• Real-time threat detection and alerting",
                 "• Custom analytics and visualizations",
-                "• Automated incident response"
+                "• Automated incident response",
               ]}
             />
 
@@ -345,29 +253,33 @@ export default function Home() {
               techColors={[
                 "bg-yellow-500/20 text-yellow-300",
                 "bg-orange-500/20 text-orange-300",
-                "bg-green-500/20 text-green-300"
+                "bg-green-500/20 text-green-300",
               ]}
               features={[
                 "• Interactive learning modules",
                 "• Secure user authentication",
-                "• Responsive design across devices"
+                "• Responsive design across devices",
               ]}
             />
 
             <ProjectCard
               title="Honeypot Network Analysis"
               description="Advanced threat detection system analyzing attack patterns from 50+ global locations with real-time monitoring"
-              technologies={["Network Security", "Threat Intel", "Log Analysis"]}
+              technologies={[
+                "Network Security",
+                "Threat Intel",
+                "Log Analysis",
+              ]}
               gradient="from-purple-500 to-pink-500"
               techColors={[
                 "bg-purple-500/20 text-purple-300",
                 "bg-pink-500/20 text-pink-300",
-                "bg-blue-500/20 text-blue-300"
+                "bg-blue-500/20 text-blue-300",
               ]}
               features={[
                 "• Multi-region threat detection",
                 "• Advanced pattern analysis",
-                "• Real-time alert correlation"
+                "• Real-time alert correlation",
               ]}
             />
           </div>
@@ -375,7 +287,11 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20" ref={skillsRef}>
+      <section
+        id="skills"
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20"
+        ref={skillsRef}
+      >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center gradient-text">
             Skills & Technologies
@@ -479,7 +395,11 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8" ref={contactRef}>
+      <section
+        id="contact"
+        className="py-20 px-4 sm:px-6 lg:px-8"
+        ref={contactRef}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-8 gradient-text">
             Let&apos;s Connect
