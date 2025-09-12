@@ -257,7 +257,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {/* SOC Implementation */}
             <ProjectCard
               title="SOC Implementation"
@@ -331,6 +331,24 @@ export default function Home() {
                 "• High-quality PNG and JSON export",
               ]}
               websiteUrl="https://github.com/Mazen-Alhassan/mitre-attack-flow-generator"
+            />
+
+            <ProjectCard
+              title="Sports Analytics Platform"
+              description="Advanced real-time sports analytics platform with multi-API integration, statistical modeling, automated notifications, and comprehensive data visualization"
+              technologies={["Flask", "Python", "APIs"]}
+              gradient="from-indigo-500 to-purple-500"
+              techColors={[
+                "bg-indigo-500/20 text-indigo-300",
+                "bg-purple-500/20 text-purple-300",
+                "bg-blue-500/20 text-blue-300",
+              ]}
+              features={[
+                "• Real-time multi-API data integration",
+                "• Statistical analysis and visualization",
+                "• Email/SMS notification system",
+              ]}
+              websiteUrl="https://github.com/Mazen-Alhassan/sports-analytics-platform"
             />
           </div>
         </div>
