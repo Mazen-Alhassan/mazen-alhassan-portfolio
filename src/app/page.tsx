@@ -257,22 +257,22 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            {/* SOC Implementation */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+            {/* SOC Implementation & Honeypot Analysis */}
             <ProjectCard
-              title="SOC Implementation"
-              description="Deployed Microsoft Sentinel with custom workbook and analytics rules to visualize and alert on RDP brute-force activity"
-              technologies={["Microsoft Azure", "Sentinel", "PowerShell"]}
-              gradient="from-red-500 to-orange-500"
+              title="SOC Implementation & Honeypot Analysis"
+              description="Advanced threat detection system with Microsoft Sentinel SOC deployment, analyzing attack patterns from 50+ global locations with real-time monitoring and alerting"
+              technologies={["Microsoft Azure", "Sentinel", "Network Security"]}
+              gradient="from-red-500 to-purple-500"
               techColors={[
                 "bg-red-500/20 text-red-300",
-                "bg-orange-500/20 text-orange-300",
+                "bg-purple-500/20 text-purple-300",
                 "bg-blue-500/20 text-blue-300",
               ]}
               features={[
                 "• Real-time threat detection and alerting",
+                "• Multi-region attack pattern analysis", 
                 "• Custom analytics and visualizations",
-                "• Automated incident response",
               ]}
             />
 
@@ -292,27 +292,6 @@ export default function Home() {
                 "• Responsive design across devices",
               ]}
               websiteUrl="https://mazen-alhassan.github.io/CCNA-Practice-Quiz-/#"
-            />
-
-            <ProjectCard
-              title="Honeypot Network Analysis"
-              description="Advanced threat detection system analyzing attack patterns from 50+ global locations with real-time monitoring"
-              technologies={[
-                "Network Security",
-                "Threat Intel",
-                "Log Analysis",
-              ]}
-              gradient="from-purple-500 to-pink-500"
-              techColors={[
-                "bg-purple-500/20 text-purple-300",
-                "bg-pink-500/20 text-pink-300",
-                "bg-blue-500/20 text-blue-300",
-              ]}
-              features={[
-                "• Multi-region threat detection",
-                "• Advanced pattern analysis",
-                "• Real-time alert correlation",
-              ]}
             />
 
             <ProjectCard
