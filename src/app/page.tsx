@@ -257,7 +257,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
             {/* SOC Implementation */}
             <ProjectCard
               title="SOC Implementation"
@@ -313,6 +313,24 @@ export default function Home() {
                 "• Advanced pattern analysis",
                 "• Real-time alert correlation",
               ]}
+            />
+
+            <ProjectCard
+              title="MITRE ATT&CK Flow Generator"
+              description="Advanced Python tool generating visual attack flow diagrams based on MITRE ATT&CK framework with comprehensive threat modeling capabilities"
+              technologies={["Python", "NetworkX", "Matplotlib"]}
+              gradient="from-green-500 to-emerald-500"
+              techColors={[
+                "bg-green-500/20 text-green-300",
+                "bg-emerald-500/20 text-emerald-300",
+                "bg-cyan-500/20 text-cyan-300",
+              ]}
+              features={[
+                "• Multi-asset attack flow generation",
+                "• Interactive CLI with guided prompts",
+                "• High-quality PNG and JSON export",
+              ]}
+              websiteUrl="https://github.com/Mazen-Alhassan/mitre-attack-flow-generator"
             />
           </div>
         </div>
