@@ -64,7 +64,7 @@ export default function Home() {
     <div
       className="min-h-screen relative overflow-x-hidden transition-colors duration-500"
       style={{
-        background: `linear-gradient(to right, #0a0a0a 0%, #1a0a0a 25%, #2a1010 50%, #1a0505 75%, #000000 100%)`,
+        background: `linear-gradient(to right, #050505 0%, #0f0505 25%, #1a0808 50%, #0f0303 75%, #000000 100%)`,
       }}
     >
       <ParticleBackground />
@@ -116,9 +116,9 @@ export default function Home() {
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
         ref={heroRef}
       >
-        {/* Dynamic background elements */}
+        {/* Dynamic background elements - Darker overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-red-900/30 via-red-700/20 to-red-900/40"
+          className="absolute inset-0 bg-gradient-to-r from-black/50 via-red-900/40 to-black/60"
           style={{
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
@@ -152,17 +152,42 @@ export default function Home() {
           }}
         ></div>
 
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-          <div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight gradient-red-gold">
-              {t("heroTitle")}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              {t("heroSubtitle")}
-            </p>
-            <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-              {t("heroDescription")}
-            </p>
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh]">
+              {/* Left side - Text content */}
+              <div className="text-center md:text-left">
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight gradient-red-gold">
+                  {t("heroTitle")}
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-300 mb-8">
+                  {t("heroSubtitle")}
+                </p>
+                <p className="text-lg text-gray-400 mb-12">
+                  {t("heroDescription")}
+                </p>
+              </div>
+              
+              {/* Right side - Profile photo */}
+              <div className="flex justify-center md:justify-end">
+                <div className="relative group">
+                  <div className="w-80 h-80 rounded-full overflow-hidden glass-dark p-3 magnetic">
+                    <img
+                      src="/profile.jpg"
+                      alt="Mazen Alhassan Profile"
+                      className="w-full h-full rounded-full object-cover transition-all duration-300 group-hover:scale-105"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src =
+                          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='%23374151'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23D1D5DB'%3EAdd profile.jpg%3C/text%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23D1D5DB'%3Eto /public folder%3C/text%3E%3C/svg%3E";
+                      }}
+                    />
+                  </div>
+                  {/* Enhanced glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/30 via-red-700/20 to-red-900/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -186,27 +211,6 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-white mb-12 text-center gradient-text">
             {t("aboutTitle")}
           </h2>
-          {/* Profile Picture - Centered */}
-          <div className="flex justify-center mb-12">
-            <div className="relative group">
-              <div className="w-64 h-64 rounded-full overflow-hidden glass-dark p-2 magnetic">
-                {/* Replace /profile.jpg with your actual profile picture */}
-                <img
-                  src="/profile.jpg"
-                  alt="Mazen Alhassan Profile"
-                  className="w-full h-full rounded-full object-cover transition-all duration-300 group-hover:scale-105"
-                  onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
-                    const target = e.target as HTMLImageElement;
-                    target.src =
-                      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='%23374151'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' fill='%23D1D5DB'%3EAdd profile.jpg%3C/text%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' fill='%23D1D5DB'%3Eto /public folder%3C/text%3E%3C/svg%3E";
-                  }}
-                />
-              </div>
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-            </div>
-          </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* About Text */}
