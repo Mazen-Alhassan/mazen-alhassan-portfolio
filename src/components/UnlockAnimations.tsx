@@ -48,7 +48,7 @@ export const CertificationBadge: React.FC<CertificationBadgeProps> = ({
   return (
     <div
       ref={ref}
-      className={`${gradient} px-6 py-3 rounded-full border border-opacity-30 relative overflow-hidden transform-gpu ${
+      className={`${gradient} px-6 py-4 rounded-full border relative overflow-hidden transform-gpu min-h-[60px] flex items-center justify-center ${
         isUnlocked
           ? "animate-badge-unlock opacity-100"
           : "opacity-0 scale-0 rotate-180"
@@ -60,12 +60,10 @@ export const CertificationBadge: React.FC<CertificationBadgeProps> = ({
           <span className="text-2xl">🔒</span>
         </div>
       )}
-      
+
       {/* Certification text */}
-      <span className="font-medium relative z-10">
-        {certification}
-      </span>
-      
+      <span className="font-medium relative z-10">{certification}</span>
+
       {/* Unlock effect */}
       {isUnlocked && (
         <div className="absolute top-0 right-2 text-green-400 animate-bounce">
@@ -94,9 +92,5 @@ export const PulseElement: React.FC<PulseElementProps> = ({
     heartbeat: "animate-heartbeat",
   }[pulseType];
 
-  return (
-    <div className={`${pulseClass} ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`${pulseClass} ${className}`}>{children}</div>;
 };

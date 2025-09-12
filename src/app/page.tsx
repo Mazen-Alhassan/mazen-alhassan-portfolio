@@ -5,12 +5,14 @@ import ParticleBackground from "../components/ParticleBackground";
 import ProjectCard from "../components/ProjectCard";
 import CompanyLogos from "../components/CompanyLogos";
 import { useLanguage } from "../contexts/LanguageContext";
-import { useTheme } from "../contexts/ThemeContext";
 import {
   useScrollAnimation,
   useParallax,
 } from "../components/ScrollAnimations";
-import { CertificationBadge, PulseElement } from "../components/UnlockAnimations";
+import {
+  CertificationBadge,
+  PulseElement,
+} from "../components/UnlockAnimations";
 
 export default function Home() {
   const [, setActiveSection] = useState("hero");
@@ -18,7 +20,8 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
   const { language, toggleLanguage, t } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
+  // Using original Red Team theme as default (no theme switching)
+  const theme = "light";
 
   const heroRef = useScrollAnimation();
   const aboutRef = useScrollAnimation();
@@ -58,20 +61,25 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900 to-black relative overflow-x-hidden">
+    <div
+      className="min-h-screen relative overflow-x-hidden transition-colors duration-500"
+      style={{
+        background: `linear-gradient(to right, #0a0a0a 0%, #1a0a0a 25%, #2a1010 50%, #1a0505 75%, #000000 100%)`,
+      }}
+    >
       <ParticleBackground />
       {/* Navigation */}
       <nav
         className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${
-          isScrolled
-            ? "glass-red animate-red-pulse"
-            : "bg-transparent"
+          isScrolled ? "glass-red animate-red-pulse" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16">
             <PulseElement pulseType="heartbeat">
-              <div className="text-white font-bold text-xl gradient-red-gold">MA</div>
+              <div className="text-white font-bold text-xl gradient-red-gold">
+                MA
+              </div>
             </PulseElement>
             <div className="hidden md:flex space-x-8 items-center">
               {[
@@ -90,23 +98,13 @@ export default function Home() {
                 </button>
               ))}
 
-                  {/* Theme Toggle Button */}
-                  <PulseElement pulseType="gold">
-                    <button
-                      onClick={toggleTheme}
-                      className="ml-4 px-4 py-2 rounded-full glass-gold border border-yellow-500/30 text-white text-sm font-medium hover:animate-gold-pulse transition-all duration-300 magnetic"
-                    >
-                      {theme === "light" ? "🌙" : "☀️"}
-                    </button>
-                  </PulseElement>
-
-                  {/* Arabic Toggle Button */}
-                  <button
-                    onClick={toggleLanguage}
-                    className="ml-4 px-4 py-2 rounded-full bg-gradient-to-r from-red-600/20 to-red-800/20 border border-red-500/30 text-white text-sm font-medium hover:from-red-600/30 hover:to-red-800/30 transition-all duration-300 magnetic animate-red-pulse"
-                  >
-                    {language === "en" ? "Arabic" : "English"}
-                  </button>
+              {/* Arabic Toggle Button */}
+              <button
+                onClick={toggleLanguage}
+                className="ml-4 px-4 py-2 rounded-full bg-gradient-to-r from-red-600/20 to-red-800/20 border border-red-500/30 text-white text-sm font-medium hover:from-red-600/30 hover:to-red-800/30 transition-all duration-300 magnetic animate-red-pulse"
+              >
+                {language === "en" ? "Arabic" : "English"}
+              </button>
             </div>
           </div>
         </div>
@@ -118,13 +116,13 @@ export default function Home() {
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
         ref={heroRef}
       >
-            {/* Dynamic background elements */}
-            <div
-              className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-red-800/20 to-yellow-600/20"
-              style={{
-                transform: `translateY(${scrollY * 0.5}px)`,
-              }}
-            ></div>
+        {/* Dynamic background elements */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-red-900/30 via-red-700/20 to-red-900/40"
+          style={{
+            transform: `translateY(${scrollY * 0.5}px)`,
+          }}
+        ></div>
 
         {/* Floating elements */}
         <PulseElement pulseType="red">
@@ -132,7 +130,7 @@ export default function Home() {
             ref={parallaxRef1}
             className="absolute top-20 left-10 animate-float"
           >
-            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-red-500/30 to-yellow-500/30 blur-xl"></div>
+            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-red-600/40 to-red-800/40 blur-xl"></div>
           </div>
         </PulseElement>
         <PulseElement pulseType="gold">
@@ -141,13 +139,13 @@ export default function Home() {
             className="absolute bottom-20 right-10 animate-float"
             style={{ animationDelay: "2s" }}
           >
-            <div className="w-32 h-32 rounded-full bg-gradient-to-r from-yellow-500/20 to-red-500/20 blur-xl"></div>
+            <div className="w-32 h-32 rounded-full bg-gradient-to-r from-red-700/30 to-red-900/30 blur-xl"></div>
           </div>
         </PulseElement>
 
         {/* Mouse follower */}
         <div
-          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-red-500/10 to-yellow-500/10 blur-3xl pointer-events-none transition-all duration-1000 ease-out"
+          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-red-600/15 to-red-900/15 blur-3xl pointer-events-none transition-all duration-1000 ease-out"
           style={{
             left: mousePosition.x - 192,
             top: mousePosition.y - 192,
@@ -156,47 +154,34 @@ export default function Home() {
 
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
           <div>
-            <PulseElement pulseType="heartbeat">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight gradient-red-gold neon-red">
-                {t("heroTitle")}
-              </h1>
-            </PulseElement>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight gradient-red-gold">
+              {t("heroTitle")}
+            </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
               {t("heroSubtitle")}
             </p>
             <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
               {t("heroDescription")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <PulseElement pulseType="red">
-                <button
-                  onClick={() => scrollToSection("projects")}
-                  className="bg-gradient-to-r from-red-600 to-yellow-600 text-white px-8 py-3 rounded-full font-medium hover:from-red-700 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 animate-red-pulse"
-                >
-                  {t("viewWork")}
-                </button>
-              </PulseElement>
-              <PulseElement pulseType="gold">
-                <a
-                  href="mailto:Mazen.alhassan@gmail.com"
-                  className="border border-yellow-500/30 text-white px-8 py-3 rounded-full font-medium hover:bg-yellow-500/10 transition-all duration-300 glass-gold"
-                >
-                  {t("getInTouch")}
-                </a>
-              </PulseElement>
-            </div>
           </div>
         </div>
 
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-4 -right-4 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-red-pulse"></div>
-          <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-gold-pulse"></div>
+          <div className="absolute -top-4 -right-4 w-72 h-72 bg-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-red-pulse"></div>
+          <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-red-800 rounded-full mix-blend-multiply filter blur-xl opacity-25 animate-gold-pulse"></div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8" ref={aboutRef}>
+      <section
+        id="about"
+        className="py-20 px-4 sm:px-6 lg:px-8 relative"
+        ref={aboutRef}
+        style={{
+          background: `linear-gradient(180deg, transparent 0%, rgba(40, 10, 10, 0.3) 50%, transparent 100%)`,
+        }}
+      >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center gradient-text">
             {t("aboutTitle")}
@@ -306,6 +291,7 @@ export default function Home() {
                 "• Secure user authentication",
                 "• Responsive design across devices",
               ]}
+              websiteUrl="https://mazen-alhassan.github.io/CCNA-Practice-Quiz-/#"
             />
 
             <ProjectCard
@@ -335,8 +321,11 @@ export default function Home() {
       {/* Skills Section */}
       <section
         id="skills"
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20"
+        className="py-20 px-4 sm:px-6 lg:px-8 relative"
         ref={skillsRef}
+        style={{
+          background: `linear-gradient(180deg, transparent 0%, rgba(10, 5, 5, 0.5) 50%, transparent 100%)`,
+        }}
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center gradient-text">
@@ -420,32 +409,32 @@ export default function Home() {
           </div>
 
           {/* Certifications with Unlock Animations */}
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <PulseElement pulseType="gold">
-              <h3 className="text-2xl font-semibold text-white mb-6 gradient-red-gold neon-gold">
+              <h3 className="text-2xl font-semibold text-white mb-8 gradient-red-gold">
                 🏆 {t("certifications")}
               </h3>
             </PulseElement>
-            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <CertificationBadge
                 certification={t("cert1")}
                 delay={200}
-                gradient="bg-gradient-to-r from-red-600/20 to-red-800/20 text-red-300"
+                gradient="bg-gradient-to-r from-red-900/20 to-red-700/20 text-red-300 border-red-700/30"
               />
               <CertificationBadge
                 certification={t("cert2")}
                 delay={400}
-                gradient="bg-gradient-to-r from-yellow-600/20 to-yellow-800/20 text-yellow-300"
+                gradient="bg-gradient-to-r from-red-800/20 to-red-900/20 text-red-300 border-red-600/30"
               />
               <CertificationBadge
                 certification={t("cert3")}
                 delay={600}
-                gradient="bg-gradient-to-r from-red-700/20 to-yellow-700/20 text-orange-300"
+                gradient="bg-gradient-to-r from-red-700/20 to-red-800/20 text-red-300 border-red-500/30"
               />
               <CertificationBadge
                 certification={t("cert4")}
                 delay={800}
-                gradient="bg-gradient-to-r from-yellow-700/20 to-red-700/20 text-amber-300"
+                gradient="bg-gradient-to-r from-red-600/20 to-red-800/20 text-red-300 border-red-700/30"
               />
             </div>
           </div>
@@ -455,8 +444,11 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-20 px-4 sm:px-6 lg:px-8"
+        className="py-20 px-4 sm:px-6 lg:px-8 relative"
         ref={contactRef}
+        style={{
+          background: `linear-gradient(180deg, transparent 0%, rgba(25, 10, 10, 0.2) 50%, transparent 100%)`,
+        }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-8 gradient-text">
