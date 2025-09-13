@@ -88,8 +88,17 @@ const translations = {
     cert1: "Cybersecurity Foundations",
     cert2: "Cybersecurity Foundations: Governance, Risk, and Compliance (GRC)",
     cert3: "IT Service Desk: Service Management",
-    cert4:
-      "Microsoft Security Essentials: Concepts, Solutions, and AI-Powered Protection",
+    cert4: "Microsoft Security Essentials: Concepts, Solutions, and AI-Powered Protection",
+    
+    // Project translations
+    socTitle: "SOC Implementation & Honeypot Analysis",
+    socDescription: "Advanced threat detection system with Microsoft Sentinel SOC deployment, analyzing attack patterns from 50+ global locations with real-time monitoring and alerting",
+    ccnaTitle: "CCNA Practice Platform", 
+    ccnaDescription: "Interactive web platform for CCNA certification preparation with 50+ active users providing valuable learning insights",
+    mitreTitle: "MITRE ATT&CK Flow Generator",
+    mitreDescription: "Advanced Python tool generating visual attack flow diagrams based on MITRE ATT&CK framework with comprehensive threat modeling capabilities",
+    sportsTitle: "Sports Analytics Platform",
+    sportsDescription: "Advanced real-time sports analytics platform with multi-API integration, statistical modeling, automated notifications, and comprehensive data visualization",
 
     // Contact Section
     contactTitle: "Let's Connect",
@@ -172,8 +181,17 @@ const translations = {
     cert1: "أسس الأمن السيبراني",
     cert2: "أسس الأمن السيبراني: الحوكمة والمخاطر والامتثال",
     cert3: "مكتب خدمة تقنية المعلومات: إدارة الخدمة",
-    cert4:
-      "أساسيات أمان مايكروسوفت: المفاهيم والحلول والحماية بالذكاء الاصطناعي",
+    cert4: "أساسيات أمان مايكروسوفت: المفاهيم والحلول والحماية بالذكاء الاصطناعي",
+    
+    // Project translations
+    socTitle: "تطبيق مركز العمليات الأمنية وتحليل شبكة العسل",
+    socDescription: "نظام كشف التهديدات المتقدم مع نشر SOC مايكروسوفت سنتينل، تحليل أنماط الهجمات من أكثر من 50 موقعاً عالمياً مع المراقبة والتنبيه في الوقت الفعلي",
+    ccnaTitle: "منصة تدريب CCNA",
+    ccnaDescription: "منصة ويب تفاعلية لإعداد شهادة CCNA مع أكثر من 50 مستخدماً نشطاً يوفرون رؤى تعليمية قيمة",
+    mitreTitle: "مولد مخططات تدفق هجمات MITRE ATT&CK",
+    mitreDescription: "أداة بايثون متقدمة لتوليد مخططات تدفق الهجمات البصرية بناءً على إطار عمل MITRE ATT&CK مع قدرات نمذجة التهديدات الشاملة",
+    sportsTitle: "منصة تحليلات الرياضة",
+    sportsDescription: "منصة تحليلات رياضية متقدمة في الوقت الفعلي مع تكامل متعدد APIs، النمذجة الإحصائية، الإشعارات الآلية، وتصور البيانات الشامل",
 
     // Contact Section
     contactTitle: "لنتواصل",

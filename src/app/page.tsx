@@ -71,16 +71,14 @@ export default function Home() {
       {/* Navigation */}
       <nav
         className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${
-          isScrolled ? "glass-red animate-red-pulse" : "bg-transparent"
+          isScrolled ? "glass-red" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16">
-            <PulseElement pulseType="heartbeat">
-              <div className="text-white font-bold text-xl gradient-red-gold">
-                MA
-              </div>
-            </PulseElement>
+            <div className="text-white font-bold text-xl gradient-red-gold">
+              MA
+            </div>
             <div className="hidden md:flex space-x-8 items-center">
               {[
                 { key: "about", label: t("about") },
@@ -167,9 +165,9 @@ export default function Home() {
                   {t("heroDescription")}
                 </p>
               </div>
-              
+
               {/* Right side - Profile photo */}
-              <div className="flex justify-center md:justify-end">
+              <div className="flex justify-center md:justify-center md:mr-12">
                 <div className="relative group">
                   <div className="w-80 h-80 rounded-full overflow-hidden glass-dark p-3 magnetic">
                     <img
@@ -264,8 +262,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
             {/* SOC Implementation & Honeypot Analysis */}
             <ProjectCard
-              title="SOC Implementation & Honeypot Analysis"
-              description="Advanced threat detection system with Microsoft Sentinel SOC deployment, analyzing attack patterns from 50+ global locations with real-time monitoring and alerting"
+              title={t("socTitle")}
+              description={t("socDescription")}
               technologies={["Microsoft Azure", "Sentinel", "Network Security"]}
               gradient="from-red-500 to-purple-500"
               techColors={[
@@ -275,14 +273,14 @@ export default function Home() {
               ]}
               features={[
                 "• Real-time threat detection and alerting",
-                "• Multi-region attack pattern analysis", 
+                "• Multi-region attack pattern analysis",
                 "• Custom analytics and visualizations",
               ]}
             />
 
             <ProjectCard
-              title="CCNA Practice Platform"
-              description="Interactive web platform for CCNA certification preparation with 50+ active users providing valuable learning insights"
+              title={t("ccnaTitle")}
+              description={t("ccnaDescription")}
               technologies={["JavaScript", "HTML/CSS", "HTTPS"]}
               gradient="from-blue-500 to-cyan-500"
               techColors={[
@@ -299,8 +297,8 @@ export default function Home() {
             />
 
             <ProjectCard
-              title="MITRE ATT&CK Flow Generator"
-              description="Advanced Python tool generating visual attack flow diagrams based on MITRE ATT&CK framework with comprehensive threat modeling capabilities"
+              title={t("mitreTitle")}
+              description={t("mitreDescription")}
               technologies={["Python", "NetworkX", "Matplotlib"]}
               gradient="from-green-500 to-emerald-500"
               techColors={[
@@ -317,8 +315,8 @@ export default function Home() {
             />
 
             <ProjectCard
-              title="Sports Analytics Platform"
-              description="Advanced real-time sports analytics platform with multi-API integration, statistical modeling, automated notifications, and comprehensive data visualization"
+              title={t("sportsTitle")}
+              description={t("sportsDescription")}
               technologies={["Flask", "Python", "APIs"]}
               gradient="from-indigo-500 to-purple-500"
               techColors={[
@@ -484,7 +482,9 @@ export default function Home() {
               className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105"
             >
               <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/30 transition-colors">
-                <span className="text-blue-400 text-xl">✉</span>
+                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
               <h3 className="text-white font-semibold mb-2">Email</h3>
               <p className="text-gray-400">Mazen.alhassan@gmail.com</p>
@@ -512,7 +512,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-600/10 to-blue-600/10 p-8 rounded-2xl border border-purple-500/20">
+          <div className="bg-gradient-to-r from-red-900/20 to-red-700/20 p-8 rounded-2xl border border-red-500/30">
             <h3 className="text-2xl font-semibold text-white mb-4">
               Ready to collaborate?
             </h3>
@@ -524,7 +524,7 @@ export default function Home() {
             </p>
             <a
               href="mailto:Mazen.alhassan@gmail.com?subject=Collaboration Opportunity"
-              className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center bg-gradient-to-r from-red-600 to-red-800 text-white px-8 py-3 rounded-full font-medium hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:scale-105"
             >
               Start a Conversation
               <span className="ml-2">→</span>
