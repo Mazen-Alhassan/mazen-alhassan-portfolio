@@ -47,43 +47,12 @@ const translations = {
 
     // Projects Section
     projectsTitle: "Featured Projects",
-    socTitle: "SOC Implementation",
-    socDescription:
-      "Deployed Microsoft Sentinel with custom workbook and analytics rules to visualize and alert on RDP brute-force activity",
-    socFeature1: "• Real-time threat detection and alerting",
-    socFeature2: "• Custom analytics and visualizations",
-    socFeature3: "• Automated incident response",
-
-    ccnaTitle: "CCNA Practice Platform",
-    ccnaDescription:
-      "Interactive web platform for CCNA certification preparation with 50+ active users providing valuable learning insights",
-    ccnaFeature1: "• Interactive learning modules",
-    ccnaFeature2: "• Secure user authentication",
-    ccnaFeature3: "• Responsive design across devices",
-
-    honeypotTitle: "Honeypot Network Analysis",
-    honeypotDescription:
-      "Advanced threat detection system analyzing attack patterns from 50+ global locations with real-time monitoring",
-    honeypotFeature1: "• Multi-region threat detection",
-    honeypotFeature2: "• Advanced pattern analysis",
-    honeypotFeature3: "• Real-time alert correlation",
 
     // Skills Section
     skillsTitle: "Skills & Technologies",
     programming: "Programming",
     cybersecurity: "Cybersecurity",
     toolsPlatforms: "Tools & Platforms",
-
-    // Project Features (for Arabic translation)
-    realTimeDetection: "Real-time threat detection and alerting",
-    customAnalytics: "Custom analytics and visualizations",
-    automatedResponse: "Automated incident response",
-    interactiveLearning: "Interactive learning modules",
-    secureAuth: "Secure user authentication",
-    responsiveDesign: "Responsive design across devices",
-    multiRegionDetection: "Multi-region threat detection",
-    advancedPatterns: "Advanced pattern analysis",
-    realTimeCorrelation: "Real-time alert correlation",
     certifications: "LinkedIn Certifications",
     cert1: "Cybersecurity Foundations",
     cert2: "Cybersecurity Foundations: Governance, Risk, and Compliance (GRC)",
@@ -158,26 +127,6 @@ const translations = {
 
     // Projects Section
     projectsTitle: "المشاريع المميزة",
-    socTitle: "تطبيق مركز العمليات الأمنية",
-    socDescription:
-      "نشر Microsoft Sentinel مع مصنف مخصص وقواعد تحليلات لتصور وتنبيه أنشطة القوة الغاشمة RDP",
-    socFeature1: "• كشف التهديدات والتنبيه في الوقت الفعلي",
-    socFeature2: "• التحليلات والتصورات المخصصة",
-    socFeature3: "• الاستجابة التلقائية للحوادث",
-
-    ccnaTitle: "منصة تدريب CCNA",
-    ccnaDescription:
-      "منصة ويب تفاعلية لإعداد شهادة CCNA مع أكثر من 50 مستخدم نشط يقدمون رؤى تعليمية قيمة",
-    ccnaFeature1: "• وحدات تعلم تفاعلية",
-    ccnaFeature2: "• مصادقة مستخدم آمنة",
-    ccnaFeature3: "• تصميم متجاوب عبر الأجهزة",
-
-    honeypotTitle: "تحليل شبكة العسل",
-    honeypotDescription:
-      "نظام كشف تهديدات متقدم يحلل أنماط الهجمات من أكثر من 50 موقعًا عالميًا مع المراقبة في الوقت الفعلي",
-    honeypotFeature1: "• كشف التهديدات متعدد المناطق",
-    honeypotFeature2: "• تحليل الأنماط المتقدم",
-    honeypotFeature3: "• ربط التنبيهات في الوقت الفعلي",
 
     // Skills Section
     skillsTitle: "المهارات والتقنيات",

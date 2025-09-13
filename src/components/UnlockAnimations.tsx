@@ -40,13 +40,11 @@ export const useUnlockAnimation = (delay: number = 0) => {
 // Certification Badge Component (simplified - no animations)
 interface CertificationBadgeProps {
   certification: string;
-  delay?: number;
   gradient: string;
 }
 
 export const CertificationBadge: React.FC<CertificationBadgeProps> = ({
   certification,
-  delay = 0,
   gradient,
 }) => {
   // Simple static component - no animations to avoid React Hooks issues
