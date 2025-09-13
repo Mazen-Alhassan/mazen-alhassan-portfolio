@@ -2,10 +2,16 @@ import { useEffect, useState, useRef } from "react";
 
 // Hook for unlock animations on scroll
 export const useUnlockAnimation = (delay: number = 0) => {
-  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(delay === 0);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // If no delay, skip animation entirely
+    if (delay === 0) {
+      setIsUnlocked(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isUnlocked) {
@@ -43,8 +49,7 @@ export const CertificationBadge: React.FC<CertificationBadgeProps> = ({
   delay = 0,
   gradient,
 }) => {
-  const { ref, isUnlocked } =
-    delay > 0 ? useUnlockAnimation(delay) : { ref: null, isUnlocked: true };
+  const { ref, isUnlocked } = useUnlockAnimation(delay);
 
   return (
     <div
