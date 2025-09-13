@@ -84,21 +84,26 @@ const translations = {
     multiRegionDetection: "Multi-region threat detection",
     advancedPatterns: "Advanced pattern analysis",
     realTimeCorrelation: "Real-time alert correlation",
-    certifications: "Certifications",
+    certifications: "LinkedIn Certifications",
     cert1: "Cybersecurity Foundations",
     cert2: "Cybersecurity Foundations: Governance, Risk, and Compliance (GRC)",
     cert3: "IT Service Desk: Service Management",
-    cert4: "Microsoft Security Essentials: Concepts, Solutions, and AI-Powered Protection",
-    
+    cert4:
+      "Microsoft Security Essentials: Concepts, Solutions, and AI-Powered Protection",
+
     // Project translations
     socTitle: "SOC Implementation & Honeypot Analysis",
-    socDescription: "Advanced threat detection system with Microsoft Sentinel SOC deployment, analyzing attack patterns from 50+ global locations with real-time monitoring and alerting",
-    ccnaTitle: "CCNA Practice Platform", 
-    ccnaDescription: "Interactive web platform for CCNA certification preparation with 50+ active users providing valuable learning insights",
+    socDescription:
+      "Advanced threat detection system with Microsoft Sentinel SOC deployment, analyzing attack patterns from 50+ global locations with real-time monitoring and alerting",
+    ccnaTitle: "CCNA Practice Platform",
+    ccnaDescription:
+      "Interactive web platform for CCNA certification preparation with 50+ active users providing valuable learning insights",
     mitreTitle: "MITRE ATT&CK Flow Generator",
-    mitreDescription: "Advanced Python tool generating visual attack flow diagrams based on MITRE ATT&CK framework with comprehensive threat modeling capabilities",
+    mitreDescription:
+      "Advanced Python tool generating visual attack flow diagrams based on MITRE ATT&CK framework with comprehensive threat modeling capabilities",
     sportsTitle: "Sports Analytics Platform",
-    sportsDescription: "Advanced real-time sports analytics platform with multi-API integration, statistical modeling, automated notifications, and comprehensive data visualization",
+    sportsDescription:
+      "Advanced real-time sports analytics platform with multi-API integration, statistical modeling, automated notifications, and comprehensive data visualization",
 
     // Contact Section
     contactTitle: "Let's Connect",
@@ -106,14 +111,16 @@ const translations = {
       "Interested in cybersecurity research, full-stack development, or just want to chat about technology? I'd love to hear from you.",
     email: "Email",
     phone: "Phone",
-    readyToCollaborate: "Ready to collaborate?",
+    readyToCollaborate: "Want to collaborate?",
     collaborateDescription:
-      "Whether you're looking for cybersecurity research collaboration, full-stack development expertise, or consulting on network security projects, I'm always excited to work on challenging problems.",
+      "I'm actively seeking opportunities in cybersecurity engineering, threat analysis, and full-stack development roles. With hands-on experience in MITRE ATT&CK frameworks, SOC implementation, and secure application development, I'm ready to contribute to your team's security initiatives.",
     startConversation: "Start a Conversation",
+    connectWithMe: "Connect with me",
 
     // Footer
     builtWith: "Built with Next.js and Tailwind CSS.",
     deployedOn: "Deployed on Vercel",
+    designedWithSecurity: "Designed with security in mind",
   },
   ar: {
     // Navigation
@@ -177,21 +184,26 @@ const translations = {
     programming: "البرمجة",
     cybersecurity: "الأمن السيبراني",
     toolsPlatforms: "الأدوات والمنصات",
-    certifications: "الشهادات",
+    certifications: "شهادات LinkedIn",
     cert1: "أسس الأمن السيبراني",
     cert2: "أسس الأمن السيبراني: الحوكمة والمخاطر والامتثال",
     cert3: "مكتب خدمة تقنية المعلومات: إدارة الخدمة",
-    cert4: "أساسيات أمان مايكروسوفت: المفاهيم والحلول والحماية بالذكاء الاصطناعي",
-    
+    cert4:
+      "أساسيات أمان مايكروسوفت: المفاهيم والحلول والحماية بالذكاء الاصطناعي",
+
     // Project translations
     socTitle: "تطبيق مركز العمليات الأمنية وتحليل شبكة العسل",
-    socDescription: "نظام كشف التهديدات المتقدم مع نشر SOC مايكروسوفت سنتينل، تحليل أنماط الهجمات من أكثر من 50 موقعاً عالمياً مع المراقبة والتنبيه في الوقت الفعلي",
+    socDescription:
+      "نظام كشف التهديدات المتقدم مع نشر SOC مايكروسوفت سنتينل، تحليل أنماط الهجمات من أكثر من 50 موقعاً عالمياً مع المراقبة والتنبيه في الوقت الفعلي",
     ccnaTitle: "منصة تدريب CCNA",
-    ccnaDescription: "منصة ويب تفاعلية لإعداد شهادة CCNA مع أكثر من 50 مستخدماً نشطاً يوفرون رؤى تعليمية قيمة",
+    ccnaDescription:
+      "منصة ويب تفاعلية لإعداد شهادة CCNA مع أكثر من 50 مستخدماً نشطاً يوفرون رؤى تعليمية قيمة",
     mitreTitle: "مولد مخططات تدفق هجمات MITRE ATT&CK",
-    mitreDescription: "أداة بايثون متقدمة لتوليد مخططات تدفق الهجمات البصرية بناءً على إطار عمل MITRE ATT&CK مع قدرات نمذجة التهديدات الشاملة",
+    mitreDescription:
+      "أداة بايثون متقدمة لتوليد مخططات تدفق الهجمات البصرية بناءً على إطار عمل MITRE ATT&CK مع قدرات نمذجة التهديدات الشاملة",
     sportsTitle: "منصة تحليلات الرياضة",
-    sportsDescription: "منصة تحليلات رياضية متقدمة في الوقت الفعلي مع تكامل متعدد APIs، النمذجة الإحصائية، الإشعارات الآلية، وتصور البيانات الشامل",
+    sportsDescription:
+      "منصة تحليلات رياضية متقدمة في الوقت الفعلي مع تكامل متعدد APIs، النمذجة الإحصائية، الإشعارات الآلية، وتصور البيانات الشامل",
 
     // Contact Section
     contactTitle: "لنتواصل",
@@ -199,14 +211,16 @@ const translations = {
       "مهتم ببحوث الأمن السيبراني أو تطوير المكدس الكامل أو تريد فقط الدردشة حول التكنولوجيا؟ أحب أن أسمع منك.",
     email: "البريد الإلكتروني",
     phone: "الهاتف",
-    readyToCollaborate: "مستعد للتعاون؟",
+    readyToCollaborate: "تريد التعاون؟",
     collaborateDescription:
-      "سواء كنت تبحث عن تعاون في بحوث الأمن السيبراني أو خبرة تطوير المكدس الكامل أو استشارات حول مشاريع أمن الشبكات، فأنا دائمًا متحمس للعمل على مشاكل صعبة.",
+      "أبحث بنشاط عن فرص في هندسة الأمن السيبراني وتحليل التهديدات وأدوار تطوير المكدس الكامل. مع خبرة عملية في أطر MITRE ATT&CK وتطبيق مراكز العمليات الأمنية وتطوير التطبيقات الآمنة، أنا مستعد للمساهمة في مبادرات الأمان لفريقكم.",
     startConversation: "ابدأ محادثة",
+    connectWithMe: "تواصل معي",
 
     // Footer
     builtWith: "مبني باستخدام Next.js و Tailwind CSS.",
     deployedOn: "منشور على Vercel",
+    designedWithSecurity: "مصمم مع مراعاة الأمان",
   },
 };
 

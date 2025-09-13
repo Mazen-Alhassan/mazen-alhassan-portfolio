@@ -34,28 +34,31 @@ export const useUnlockAnimation = (delay: number = 0) => {
 // Certification Badge Component with unlock animation
 interface CertificationBadgeProps {
   certification: string;
-  delay: number;
+  delay?: number;
   gradient: string;
 }
 
 export const CertificationBadge: React.FC<CertificationBadgeProps> = ({
   certification,
-  delay,
+  delay = 0,
   gradient,
 }) => {
-  const { ref, isUnlocked } = useUnlockAnimation(delay);
+  const { ref, isUnlocked } =
+    delay > 0 ? useUnlockAnimation(delay) : { ref: null, isUnlocked: true };
 
   return (
     <div
       ref={ref}
       className={`${gradient} px-6 py-4 rounded-full border relative overflow-hidden transform-gpu min-h-[60px] flex items-center justify-center ${
-        isUnlocked
-          ? "animate-badge-unlock opacity-100"
-          : "opacity-0 scale-0 rotate-180"
+        delay > 0
+          ? isUnlocked
+            ? "animate-badge-unlock opacity-100"
+            : "opacity-0 scale-0 rotate-180"
+          : "opacity-100"
       }`}
     >
       {/* Lock icon overlay that disappears */}
-      {!isUnlocked && (
+      {delay > 0 && !isUnlocked && (
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
           <span className="text-2xl">🔒</span>
         </div>
@@ -65,7 +68,7 @@ export const CertificationBadge: React.FC<CertificationBadgeProps> = ({
       <span className="font-medium relative z-10">{certification}</span>
 
       {/* Unlock effect */}
-      {isUnlocked && (
+      {delay > 0 && isUnlocked && (
         <div className="absolute top-0 right-2 text-green-400 animate-bounce">
           ✓
         </div>

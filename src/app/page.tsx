@@ -348,9 +348,9 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-white mb-12 text-center gradient-text">
             Skills & Technologies
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Programming */}
-            <div className="glass-dark p-6 rounded-2xl magnetic hover:border-blue-500/50 transition-all duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {/* Programming Languages */}
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
                 <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
                 Programming
@@ -358,15 +358,49 @@ export default function Home() {
               <div className="flex flex-wrap gap-2">
                 {[
                   "Python",
-                  "JavaScript/TypeScript",
+                  "JavaScript",
+                  "TypeScript",
                   "C++",
                   "C",
                   "SQL",
                   "PowerShell",
+                  "HTML/CSS",
+                  "PHP",
+                  "Bash",
+                  "MATLAB",
                 ].map((skill) => (
                   <span
                     key={skill}
                     className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Frameworks & Tools */}
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
+              <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
+                <span className="w-3 h-3 bg-purple-500 rounded-full mr-3"></span>
+                Frameworks & Tools
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "React.js",
+                  "Next.js",
+                  "Flask",
+                  "Django",
+                  "Express.js",
+                  "NetworkX",
+                  "Pandas",
+                  "XCode",
+                  "Jenkins",
+                  "Kubernetes",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm"
                   >
                     {skill}
                   </span>
@@ -412,7 +446,6 @@ export default function Home() {
                   "Git/GitHub",
                   "Linux",
                   "Active Directory",
-                  "NetworkX",
                 ].map((skill) => (
                   <span
                     key={skill}
@@ -425,32 +458,53 @@ export default function Home() {
             </div>
           </div>
 
+          {/* AI & Machine Learning Section */}
+          <div className="mt-12">
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 md:p-8 rounded-2xl border border-gray-700/50">
+              <h3 className="text-2xl font-semibold text-white mb-6 flex items-center">
+                <span className="w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mr-3"></span>
+                Artificial Intelligence & Machine Learning
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  "Artificial Intelligence",
+                  "Generative AI",
+                  "Large Language Models (LLM)",
+                  "Prompt Engineering",
+                  "Computer Vision",
+                  "AI Product Strategy",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 rounded-full text-sm font-medium border border-yellow-500/30"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Certifications with Unlock Animations */}
           <div className="mt-16 text-center">
-            <PulseElement pulseType="gold">
-              <h3 className="text-2xl font-semibold text-white mb-8 gradient-red-gold">
-                🏆 {t("certifications")}
-              </h3>
-            </PulseElement>
+            <h3 className="text-2xl font-semibold text-white mb-8 gradient-red-gold">
+              🏆 {t("certifications")}
+            </h3>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <CertificationBadge
                 certification={t("cert1")}
-                delay={200}
                 gradient="bg-gradient-to-r from-red-900/20 to-red-700/20 text-red-300 border-red-700/30"
               />
               <CertificationBadge
                 certification={t("cert2")}
-                delay={400}
                 gradient="bg-gradient-to-r from-red-800/20 to-red-900/20 text-red-300 border-red-600/30"
               />
               <CertificationBadge
                 certification={t("cert3")}
-                delay={600}
                 gradient="bg-gradient-to-r from-red-700/20 to-red-800/20 text-red-300 border-red-500/30"
               />
               <CertificationBadge
                 certification={t("cert4")}
-                delay={800}
                 gradient="bg-gradient-to-r from-red-600/20 to-red-800/20 text-red-300 border-red-700/30"
               />
             </div>
@@ -469,11 +523,10 @@ export default function Home() {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-8 gradient-text">
-            Let&apos;s Connect
+            {t("contactTitle")}
           </h2>
           <p className="text-xl text-gray-300 mb-12">
-            Interested in cybersecurity research, full-stack development, or
-            just want to chat about technology? I&apos;d love to hear from you.
+            {t("contactDescription")}
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -482,11 +535,21 @@ export default function Home() {
               className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105"
             >
               <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/30 transition-colors">
-                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  className="w-6 h-6 text-blue-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
               </div>
-              <h3 className="text-white font-semibold mb-2">Email</h3>
+              <h3 className="text-white font-semibold mb-2">{t("email")}</h3>
               <p className="text-gray-400">Mazen.alhassan@gmail.com</p>
             </a>
 
@@ -500,33 +563,28 @@ export default function Home() {
                 <span className="text-blue-400 text-xl">💼</span>
               </div>
               <h3 className="text-white font-semibold mb-2">LinkedIn</h3>
-              <p className="text-gray-400">Connect with me</p>
+              <p className="text-gray-400">{t("connectWithMe")}</p>
             </a>
 
             <div className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
               <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-green-400 text-xl">📞</span>
               </div>
-              <h3 className="text-white font-semibold mb-2">Phone</h3>
+              <h3 className="text-white font-semibold mb-2">{t("phone")}</h3>
               <p className="text-gray-400">613-294-4133</p>
             </div>
           </div>
 
           <div className="bg-gradient-to-r from-red-900/20 to-red-700/20 p-8 rounded-2xl border border-red-500/30">
             <h3 className="text-2xl font-semibold text-white mb-4">
-              Ready to collaborate?
+              {t("readyToCollaborate")}
             </h3>
-            <p className="text-gray-300 mb-6">
-              Whether you&apos;re looking for cybersecurity research
-              collaboration, full-stack development expertise, or consulting on
-              network security projects, I&apos;m always excited to work on
-              challenging problems.
-            </p>
+            <p className="text-gray-300 mb-6">{t("collaborateDescription")}</p>
             <a
               href="mailto:Mazen.alhassan@gmail.com?subject=Collaboration Opportunity"
               className="inline-flex items-center bg-gradient-to-r from-red-600 to-red-800 text-white px-8 py-3 rounded-full font-medium hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:scale-105"
             >
-              Start a Conversation
+              {t("startConversation")}
               <span className="ml-2">→</span>
             </a>
           </div>
@@ -537,10 +595,10 @@ export default function Home() {
       <footer className="bg-black/40 border-t border-gray-800 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2025 Mazen Alhassan. Built with Next.js and Tailwind CSS.
+            © 2025 Mazen Alhassan. {t("builtWith")}
           </p>
           <p className="text-gray-500 text-sm mt-2">
-            Deployed on Vercel • Designed with security in mind
+            {t("deployedOn")} • {t("designedWithSecurity")}
           </p>
         </div>
       </footer>
