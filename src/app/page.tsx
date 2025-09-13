@@ -21,7 +21,6 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const { language, toggleLanguage, t } = useLanguage();
   // Using original Red Team theme as default (no theme switching)
-  const theme = "light";
 
   const heroRef = useScrollAnimation();
   const aboutRef = useScrollAnimation();
