@@ -21,7 +21,7 @@ const translations = {
 
     // Hero Section
     heroTitle: "Mazen Alhassan",
-    heroSubtitle: "Cybersecurity Researcher & Security Engineer",
+    heroSubtitle: "Cybersecurity Researcher & IT/Networking Student",
     heroDescription:
       "Building secure systems and conducting cutting-edge research in network security, MITRE ATT&CK frameworks, and threat detection at Université Laval",
     viewWork: "View My Work",
@@ -54,6 +54,10 @@ const translations = {
     cybersecurity: "Cybersecurity",
     toolsPlatforms: "Tools & Platforms",
     certifications: "LinkedIn Certifications",
+    resume: "Resume",
+    resumeDescription:
+      "Download my complete resume to learn more about my experience and qualifications.",
+    downloadResume: "Download Resume",
     cert1: "Cybersecurity Foundations",
     cert2: "Cybersecurity Foundations: Governance, Risk, and Compliance (GRC)",
     cert3: "IT Service Desk: Service Management",
@@ -101,7 +105,7 @@ const translations = {
 
     // Hero Section
     heroTitle: "مازن الحسن",
-    heroSubtitle: "باحث أمن سيبراني ومهندس أمان",
+    heroSubtitle: "باحث أمن سيبراني وطالب تقنية المعلومات/الشبكات",
     heroDescription:
       "بناء أنظمة آمنة وإجراء بحوث متطورة في أمان الشبكات وإطارات MITRE ATT&CK واكتشاف التهديدات في جامعة لافال",
     viewWork: "عرض أعمالي",
@@ -134,6 +138,10 @@ const translations = {
     cybersecurity: "الأمن السيبراني",
     toolsPlatforms: "الأدوات والمنصات",
     certifications: "شهادات LinkedIn",
+    resume: "السيرة الذاتية",
+    resumeDescription:
+      "حمل سيرتي الذاتية الكاملة لمعرفة المزيد عن خبرتي ومؤهلاتي.",
+    downloadResume: "تحميل السيرة الذاتية",
     cert1: "أسس الأمن السيبراني",
     cert2: "أسس الأمن السيبراني: الحوكمة والمخاطر والامتثال",
     cert3: "مكتب خدمة تقنية المعلومات: إدارة الخدمة",

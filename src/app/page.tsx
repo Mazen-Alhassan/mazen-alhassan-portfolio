@@ -9,10 +9,7 @@ import {
   useScrollAnimation,
   useParallax,
 } from "../components/ScrollAnimations";
-import {
-  CertificationBadge,
-  PulseElement,
-} from "../components/UnlockAnimations";
+import { PulseElement } from "../components/UnlockAnimations";
 
 export default function Home() {
   const [, setActiveSection] = useState("hero");
@@ -337,14 +334,14 @@ export default function Home() {
       {/* Skills Section */}
       <section
         id="skills"
-        className="py-20 px-4 sm:px-6 lg:px-8 relative"
+        className="py-12 px-4 sm:px-6 lg:px-8 relative"
         ref={skillsRef}
         style={{
           background: `linear-gradient(180deg, transparent 0%, rgba(10, 5, 5, 0.5) 50%, transparent 100%)`,
         }}
       >
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center gradient-text">
+          <h2 className="text-4xl font-bold text-white mb-8 text-center gradient-text">
             Skills & Technologies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -457,55 +454,30 @@ export default function Home() {
             </div>
           </div>
 
-          {/* AI & Machine Learning Section */}
-          <div className="mt-12">
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 md:p-8 rounded-2xl border border-gray-700/50">
-              <h3 className="text-2xl font-semibold text-white mb-6 flex items-center">
-                <span className="w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mr-3"></span>
-                Artificial Intelligence & Machine Learning
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "Artificial Intelligence",
-                  "Generative AI",
-                  "Large Language Models (LLM)",
-                  "Prompt Engineering",
-                  "Computer Vision",
-                  "AI Product Strategy",
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 rounded-full text-sm font-medium border border-yellow-500/30"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Certifications with Unlock Animations */}
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-semibold text-white mb-8 gradient-red-gold">
-              🏆 {t("certifications")}
+          {/* Resume Download Section */}
+          <div className="mt-12 text-center">
+            <h3 className="text-2xl font-semibold text-white mb-6 gradient-red-gold">
+              📄 {t("resume")}
             </h3>
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <CertificationBadge
-                certification={t("cert1")}
-                gradient="bg-gradient-to-r from-red-900/20 to-red-700/20 text-red-300 border-red-700/30"
-              />
-              <CertificationBadge
-                certification={t("cert2")}
-                gradient="bg-gradient-to-r from-red-800/20 to-red-900/20 text-red-300 border-red-600/30"
-              />
-              <CertificationBadge
-                certification={t("cert3")}
-                gradient="bg-gradient-to-r from-red-700/20 to-red-800/20 text-red-300 border-red-500/30"
-              />
-              <CertificationBadge
-                certification={t("cert4")}
-                gradient="bg-gradient-to-r from-red-600/20 to-red-800/20 text-red-300 border-red-700/30"
-              />
+            <div className="max-w-2xl mx-auto">
+              <p className="text-gray-300 mb-6 text-lg">
+                {t("resumeDescription")}
+              </p>
+              <button
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/Mazen Alhassan CV copy.pdf";
+                  link.download = "Mazen_Alhassan_Resume.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="bg-gradient-to-r from-red-600 to-red-800 text-white px-8 py-4 rounded-lg font-medium hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 text-lg"
+              >
+                <span>📄</span>
+                <span>{t("downloadResume")}</span>
+                <span>→</span>
+              </button>
             </div>
           </div>
         </div>
@@ -514,7 +486,7 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-20 px-4 sm:px-6 lg:px-8 relative"
+        className="pt-8 pb-20 px-4 sm:px-6 lg:px-8 relative"
         ref={contactRef}
         style={{
           background: `linear-gradient(180deg, transparent 0%, rgba(25, 10, 10, 0.2) 50%, transparent 100%)`,
