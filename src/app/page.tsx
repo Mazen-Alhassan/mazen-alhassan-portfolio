@@ -162,21 +162,14 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Right side - Profile photo */}
+              {/* Right side - Profile Image */}
               <div className="flex justify-center md:justify-center md:mr-12">
-                <div className="relative group">
-                  <div className="w-80 h-80 rounded-full overflow-hidden glass-dark p-3 magnetic">
-                    <img
-                      src="/profile.jpg"
-                      alt="Mazen Alhassan Profile"
-                      className="w-full h-full rounded-full object-cover transition-all duration-300 group-hover:scale-105"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src =
-                          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Crect width='320' height='320' fill='%23374151'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23D1D5DB'%3EAdd profile.jpg%3C/text%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23D1D5DB'%3Eto /public folder%3C/text%3E%3C/svg%3E";
-                      }}
-                    />
-                  </div>
+                <div className="relative group w-80 h-80 overflow-hidden">
+                  <img
+                    src="/profile.jpg"
+                    alt="Mazen Alhassan"
+                    className="w-full h-full object-cover rounded-full border-4 border-red-500/30 shadow-2xl"
+                  />
                   {/* Enhanced glow effect */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/30 via-red-700/20 to-red-900/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                 </div>
