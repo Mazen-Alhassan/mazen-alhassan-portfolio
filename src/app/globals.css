@@ -205,9 +205,9 @@ body {
 
 /* Red Team Glassmorphism */
 .glass {
-  background: rgba(220, 20, 60, 0.05);
+  background: rgba(128, 128, 128, 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(220, 20, 60, 0.2);
+  border: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .glass-dark {
