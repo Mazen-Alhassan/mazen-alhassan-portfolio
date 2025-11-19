@@ -61,18 +61,18 @@ export const CertificationBadge: React.FC<CertificationBadgeProps> = ({
 // Pulse effect component
 interface PulseElementProps {
   children: React.ReactNode;
-  pulseType?: "red" | "gold" | "heartbeat";
+  pulseType?: "silver" | "grey" | "heartbeat";
   className?: string;
 }
 
 export const PulseElement: React.FC<PulseElementProps> = ({
   children,
-  pulseType = "red",
+  pulseType = "silver",
   className = "",
 }) => {
   const pulseClass = {
-    red: "animate-red-pulse",
-    gold: "animate-gold-pulse",
+    silver: "animate-silver-pulse",
+    grey: "animate-grey-pulse",
     heartbeat: "animate-heartbeat",
   }[pulseType];
 

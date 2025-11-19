@@ -1,33 +1,33 @@
 @import "tailwindcss";
 
-/* Red Team Color Variables - Darker Theme */
+/* Grey, Silver, Black Theme */
 :root {
   --background: #000000;
   --foreground: #f8f8f8;
-  --primary-red: #dc143c;
-  --dark-red: #8b0000;
-  --gold-accent: #ffd700;
+  --primary-silver: #c0c0c0;
+  --dark-grey: #1a1a1a;
+  --light-grey: #e0e0e0;
   --dark-bg: #000000;
   --darker-bg: #000000;
   --text-white: #f8f8f8;
   --text-gray: #cccccc;
-  --glass-bg: rgba(220, 20, 60, 0.1);
-  --glass-border: rgba(220, 20, 60, 0.3);
+  --glass-bg: rgba(192, 192, 192, 0.1);
+  --glass-border: rgba(192, 192, 192, 0.3);
 }
 
-/* Default Red Team theme */
+/* Default theme */
 :root[data-theme="light"] {
   --background: #000000;
   --foreground: #f8f8f8;
 }
 
-/* Dark mode (Even darker Red Team theme) */
+/* Dark mode */
 :root[data-theme="dark"] {
   --background: #000000;
   --foreground: #f0f0f0;
-  --primary-red: #ff1744;
-  --dark-red: #b71c1c;
-  --gold-accent: #ffeb3b;
+  --primary-silver: #d0d0d0;
+  --dark-grey: #2a2a2a;
+  --light-grey: #f0f0f0;
 }
 
 @theme inline {
@@ -93,27 +93,29 @@ body {
   }
 }
 
-/* Red Team Pulse Effect */
-@keyframes redPulse {
+/* Silver Pulse Effect */
+@keyframes silverPulse {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(220, 20, 60, 0.3), 0 0 40px rgba(220, 20, 60, 0.1);
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.3), 0 0 40px rgba(192, 192, 192, 0.1);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 40px rgba(220, 20, 60, 0.6), 0 0 80px rgba(220, 20, 60, 0.2);
+    box-shadow: 0 0 40px rgba(192, 192, 192, 0.6), 0 0 80px rgba(192, 192, 192, 0.2);
     transform: scale(1.02);
   }
 }
 
-/* Gold Pulse Effect */
-@keyframes goldPulse {
+/* Grey Pulse Effect */
+@keyframes greyPulse {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 20px rgba(160, 160, 160, 0.2), 0 0 40px rgba(160, 160, 160, 0.1);
+    transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 80px rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 40px rgba(160, 160, 160, 0.4), 0 0 80px rgba(160, 160, 160, 0.15);
+    transform: scale(1.02);
   }
 }
 
@@ -180,13 +182,13 @@ body {
   animation: glow 2s ease-in-out infinite;
 }
 
-/* Red Team Animation Classes */
-.animate-red-pulse {
-  animation: redPulse 2s ease-in-out infinite;
+/* Animation Classes */
+.animate-silver-pulse {
+  animation: silverPulse 2s ease-in-out infinite;
 }
 
-.animate-gold-pulse {
-  animation: goldPulse 2s ease-in-out infinite;
+.animate-grey-pulse {
+  animation: greyPulse 2s ease-in-out infinite;
 }
 
 .animate-heartbeat {
@@ -214,27 +216,27 @@ body {
   border: 1px solid rgba(220, 20, 60, 0.3);
 }
 
-/* Premium Red Team Glass Effects */
-.glass-red {
+/* Premium Silver/Grey Glass Effects */
+.glass-silver {
   background: linear-gradient(
     135deg,
-    rgba(220, 20, 60, 0.1),
-    rgba(139, 0, 0, 0.05)
+    rgba(192, 192, 192, 0.1),
+    rgba(160, 160, 160, 0.05)
   );
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(220, 20, 60, 0.3);
-  box-shadow: 0 8px 32px rgba(220, 20, 60, 0.1);
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  box-shadow: 0 8px 32px rgba(192, 192, 192, 0.1);
 }
 
-.glass-gold {
+.glass-grey {
   background: linear-gradient(
     135deg,
-    rgba(255, 215, 0, 0.1),
-    rgba(255, 215, 0, 0.05)
+    rgba(128, 128, 128, 0.1),
+    rgba(128, 128, 128, 0.05)
   );
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  box-shadow: 0 8px 32px rgba(128, 128, 128, 0.1);
 }
 
 /* Smooth scrolling */
@@ -242,7 +244,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Red Team Custom scrollbar */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -252,12 +254,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #dc143c, #ffd700);
+  background: linear-gradient(to bottom, #c0c0c0, #808080);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #8b0000, #ffa500);
+  background: linear-gradient(to bottom, #d0d0d0, #a0a0a0);
 }
 
 /* Magnetic effect */
@@ -288,26 +290,22 @@ html {
   }
 }
 
-/* Red Team Neon glow effects - Toned down */
-.neon-red {
-  text-shadow: 0 0 5px #dc143c, 0 0 10px #dc143c, 0 0 15px #dc143c;
+/* Silver/Grey Neon glow effects - Subtle */
+.neon-silver {
+  text-shadow: 0 0 5px #c0c0c0, 0 0 10px #c0c0c0, 0 0 15px #c0c0c0;
 }
 
-.neon-gold {
-  text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+.neon-grey {
+  text-shadow: 0 0 5px #808080, 0 0 10px #808080, 0 0 15px #808080;
 }
 
-.neon-blue {
-  text-shadow: 0 0 10px #dc143c, 0 0 20px #dc143c, 0 0 30px #dc143c;
+.neon-white {
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
 }
 
-.neon-purple {
-  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
-}
-
-/* Red Team Gradient text */
+/* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #dc143c, #ffd700, #8b0000);
+  background: linear-gradient(135deg, #c0c0c0, #ffffff, #808080);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -315,9 +313,9 @@ html {
   animation: gradientShift 3s ease-in-out infinite;
 }
 
-/* Premium Red Team gradient */
-.gradient-red-gold {
-  background: linear-gradient(135deg, #dc143c 0%, #ffd700 50%, #dc143c 100%);
+/* Premium Silver/Grey gradient */
+.gradient-silver-white {
+  background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 50%, #c0c0c0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

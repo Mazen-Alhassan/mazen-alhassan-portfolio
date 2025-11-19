@@ -60,19 +60,19 @@ export default function Home() {
     <div
       className="min-h-screen relative overflow-x-hidden transition-colors duration-500"
       style={{
-        background: `linear-gradient(to right, #000000 0%, #0a0000 25%, #0f0000 50%, #0a0000 75%, #000000 100%)`,
+        background: `linear-gradient(to right, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #0a0a0a 75%, #000000 100%)`,
       }}
     >
       <ParticleBackground />
       {/* Navigation */}
       <nav
         className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${
-          isScrolled ? "glass-red" : "bg-transparent"
+          isScrolled ? "glass-silver" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16">
-            <div className="text-white font-bold text-xl gradient-red-gold">
+            <div className="text-white font-bold text-xl gradient-silver-white">
               MA
             </div>
             <div className="hidden md:flex space-x-8 items-center">
@@ -95,7 +95,7 @@ export default function Home() {
               {/* Arabic Toggle Button */}
               <button
                 onClick={toggleLanguage}
-                className="ml-4 px-4 py-2 rounded-full bg-gradient-to-r from-red-600/20 to-red-800/20 border border-red-500/30 text-white text-sm font-medium hover:from-red-600/30 hover:to-red-800/30 transition-all duration-300 magnetic animate-red-pulse"
+                className="ml-4 px-4 py-2 rounded-full bg-gradient-to-r from-gray-600/20 to-gray-800/20 border border-gray-500/30 text-white text-sm font-medium hover:from-gray-600/30 hover:to-gray-800/30 transition-all duration-300 magnetic animate-silver-pulse"
               >
                 {language === "en" ? "Arabic" : "English"}
               </button>
@@ -112,34 +112,34 @@ export default function Home() {
       >
         {/* Dynamic background elements - Darker overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-black/80 via-red-900/20 to-black/80"
+          className="absolute inset-0 bg-gradient-to-r from-black/80 via-gray-900/20 to-black/80"
           style={{
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         ></div>
 
         {/* Floating elements */}
-        <PulseElement pulseType="red">
+        <PulseElement pulseType="silver">
           <div
             ref={parallaxRef1}
             className="absolute top-20 left-10 animate-float"
           >
-            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-red-600/40 to-red-800/40 blur-xl"></div>
+            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-gray-600/40 to-gray-800/40 blur-xl"></div>
           </div>
         </PulseElement>
-        <PulseElement pulseType="gold">
+        <PulseElement pulseType="grey">
           <div
             ref={parallaxRef2}
             className="absolute bottom-20 right-10 animate-float"
             style={{ animationDelay: "2s" }}
           >
-            <div className="w-32 h-32 rounded-full bg-gradient-to-r from-red-700/30 to-red-900/30 blur-xl"></div>
+            <div className="w-32 h-32 rounded-full bg-gradient-to-r from-gray-700/30 to-gray-900/30 blur-xl"></div>
           </div>
         </PulseElement>
 
         {/* Mouse follower */}
         <div
-          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-red-600/15 to-red-900/15 blur-3xl pointer-events-none transition-all duration-1000 ease-out"
+          className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-gray-600/15 to-gray-900/15 blur-3xl pointer-events-none transition-all duration-1000 ease-out"
           style={{
             left: mousePosition.x - 192,
             top: mousePosition.y - 192,
@@ -148,10 +148,10 @@ export default function Home() {
 
         <div className="relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh]">
-              {/* Left side - Text content */}
-              <div className="text-center md:text-left">
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight gradient-red-gold">
+            <div className="flex items-center justify-center min-h-[80vh]">
+              {/* Text content - centered */}
+              <div className="text-center max-w-4xl">
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight gradient-silver-white">
                   {t("heroTitle")}
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8">
@@ -161,27 +161,14 @@ export default function Home() {
                   {t("heroDescription")}
                 </p>
               </div>
-
-              {/* Right side - Profile Image */}
-              <div className="flex justify-center md:justify-center md:mr-12">
-                <div className="relative group w-80 h-80 overflow-hidden">
-                  <img
-                    src="/profile.jpg"
-                    alt="Mazen Alhassan"
-                    className="w-full h-full object-cover rounded-full border-4 border-red-500/30 shadow-2xl"
-                  />
-                  {/* Enhanced glow effect */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/30 via-red-700/20 to-red-900/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
 
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-4 -right-4 w-72 h-72 bg-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-red-pulse"></div>
-          <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-red-800 rounded-full mix-blend-multiply filter blur-xl opacity-25 animate-gold-pulse"></div>
+          <div className="absolute -top-4 -right-4 w-72 h-72 bg-gray-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-silver-pulse"></div>
+          <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-gray-800 rounded-full mix-blend-multiply filter blur-xl opacity-25 animate-grey-pulse"></div>
         </div>
       </section>
 
@@ -467,7 +454,7 @@ export default function Home() {
 
           {/* Resume Download Section */}
           <div className="mt-12 text-center">
-            <h3 className="text-2xl font-semibold text-white mb-6 gradient-red-gold">
+            <h3 className="text-2xl font-semibold text-white mb-6 gradient-silver-white">
               📄 {t("resume")}
             </h3>
             <div className="max-w-2xl mx-auto">
@@ -483,7 +470,7 @@ export default function Home() {
                   link.click();
                   document.body.removeChild(link);
                 }}
-                className="bg-gradient-to-r from-red-600 to-red-800 text-white px-8 py-4 rounded-lg font-medium hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 text-lg"
+                className="bg-gradient-to-r from-gray-600 to-gray-800 text-white px-8 py-4 rounded-lg font-medium hover:from-gray-700 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 text-lg"
               >
                 <span>📄</span>
                 <span>{t("downloadResume")}</span>
@@ -557,14 +544,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-red-900/20 to-red-700/20 p-8 rounded-2xl border border-red-500/30">
+          <div className="bg-gradient-to-r from-gray-900/20 to-gray-700/20 p-8 rounded-2xl border border-gray-500/30">
             <h3 className="text-2xl font-semibold text-white mb-4">
               {t("readyToCollaborate")}
             </h3>
             <p className="text-gray-300 mb-6">{t("collaborateDescription")}</p>
             <a
               href="mailto:Mazen.alhassan@gmail.com?subject=Collaboration Opportunity"
-              className="inline-flex items-center bg-gradient-to-r from-red-600 to-red-800 text-white px-8 py-3 rounded-full font-medium hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center bg-gradient-to-r from-gray-600 to-gray-800 text-white px-8 py-3 rounded-full font-medium hover:from-gray-700 hover:to-gray-900 transition-all duration-300 transform hover:scale-105"
             >
               {t("startConversation")}
               <span className="ml-2">→</span>
