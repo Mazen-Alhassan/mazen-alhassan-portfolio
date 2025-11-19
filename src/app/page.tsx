@@ -231,11 +231,11 @@ export default function Home() {
         className="py-20 px-4 sm:px-6 lg:px-8"
         ref={projectsRef}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1800px] mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {/* SOC Implementation & Honeypot Analysis */}
             <ProjectCard
               title={t("socTitle")}

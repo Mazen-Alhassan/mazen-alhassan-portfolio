@@ -32,7 +32,7 @@ const translations = {
     aboutText1:
       "I'm a passionate cybersecurity researcher pursuing my Bachelor's degree in Information Technology/Network Technology at Carleton University, with an expected graduation in April 2027.",
     aboutText2:
-      "Currently working as a Research Intern at Université Laval, I specialize in building MITRE ATT&CK-driven attack-flow generators, modeling secure databases, and conducting comprehensive cybersecurity research. I have experience as a full-stack developer and continue to apply those skills in my security research.",
+      "My most recent work was as a Research Intern at Université Laval, where I specialized in building MITRE ATT&CK-driven attack-flow generators, modeling secure databases, and conducting comprehensive cybersecurity research. I have experience as a full-stack developer and continue to apply those skills in my security research.",
     availableForOpportunities: "Available for opportunities",
     basedInCanada: "Based in Canada",
     quickFacts: "Quick Facts",
@@ -119,7 +119,7 @@ const translations = {
     aboutText1:
       "أنا باحث شغوف في الأمن السيبراني أسعى للحصول على درجة البكالوريوس في تكنولوجيا المعلومات/تكنولوجيا الشبكات من جامعة كارلتون، مع التخرج المتوقع في أبريل 2027.",
     aboutText2:
-      "أعمل حاليًا كمتدرب باحث في جامعة لافال، وأتخصص في بناء مولدات تدفق الهجمات المدفوعة بـ MITRE ATT&CK، ونمذجة قواعد البيانات الآمنة، وإجراء بحوث شاملة في الأمن السيبراني. لدي خبرة كمطور مكدس كامل وأستمر في تطبيق هذه المهارات في أبحاث الأمان.",
+      "كان عملي الأخير كمتدرب باحث في جامعة لافال، حيث تخصصت في بناء مولدات تدفق الهجمات المدفوعة بـ MITRE ATT&CK، ونمذجة قواعد البيانات الآمنة، وإجراء بحوث شاملة في الأمن السيبراني. لدي خبرة كمطور مكدس كامل وأستمر في تطبيق هذه المهارات في أبحاث الأمان.",
     availableForOpportunities: "متاح للفرص",
     basedInCanada: "مقيم في كندا",
     quickFacts: "حقائق سريعة",
