@@ -464,7 +464,7 @@ export default function Home() {
               <button
                 onClick={() => {
                   const link = document.createElement("a");
-                  link.href = "/Mazen Alhassan CV copy.pdf";
+                  link.href = "/Mazen Alhassan CV.pdf";
                   link.download = "Mazen_Alhassan_Resume.pdf";
                   document.body.appendChild(link);
                   link.click();
