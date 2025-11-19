@@ -23,7 +23,7 @@ const translations = {
     heroTitle: "Mazen Alhassan",
     heroSubtitle: "Cybersecurity Researcher & IT/Networking Student",
     heroDescription:
-      "Building secure systems and conducting cutting-edge research in network security, MITRE ATT&CK frameworks, and threat detection at Université Laval",
+      "I'm passionate about cybersecurity and technology, with experience in full-stack development, network security research, and building tools that help people. I love learning new things and applying my skills to solve real-world problems.",
     viewWork: "View My Work",
     getInTouch: "Get In Touch",
 
@@ -110,7 +110,7 @@ const translations = {
     heroTitle: "مازن الحسن",
     heroSubtitle: "باحث أمن سيبراني وطالب تقنية المعلومات/الشبكات",
     heroDescription:
-      "بناء أنظمة آمنة وإجراء بحوث متطورة في أمان الشبكات وإطارات MITRE ATT&CK واكتشاف التهديدات في جامعة لافال",
+      "أنا شغوف بالأمن السيبراني والتكنولوجيا، مع خبرة في تطوير المكدس الكامل، وبحوث أمن الشبكات، وبناء أدوات تساعد الناس. أحب تعلم أشياء جديدة وتطبيق مهاراتي لحل المشكلات الواقعية.",
     viewWork: "عرض أعمالي",
     getInTouch: "تواصل معي",
 

@@ -197,16 +197,16 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center text-gray-300">
-                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
                   {t("availableForOpportunities")}
                 </div>
                 <div className="flex items-center text-gray-300">
-                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-gray-500 rounded-full mr-2"></span>
                   {t("basedInCanada")}
                 </div>
               </div>
             </div>
-            <div className="glass-dark p-8 rounded-2xl magnetic hover:border-blue-500/50 transition-all duration-300">
+            <div className="glass-dark p-8 rounded-2xl magnetic hover:border-gray-500/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-4">
                 {t("quickFacts")}
               </h3>
@@ -235,7 +235,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {/* SOC Implementation & Honeypot Analysis */}
             <ProjectCard
               title={t("socTitle")}
@@ -501,11 +501,11 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <a
               href="mailto:Mazen.alhassan@gmail.com"
-              className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105"
+              className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-gray-500/50 transition-all duration-300 transform hover:scale-105"
             >
-              <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/30 transition-colors">
+              <div className="w-12 h-12 bg-gray-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-500/30 transition-colors">
                 <svg
-                  className="w-6 h-6 text-blue-400"
+                  className="w-6 h-6 text-gray-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -526,18 +526,18 @@ export default function Home() {
               href="https://linkedin.com/in/mazen-alhassan3489"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105"
+              className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-gray-500/50 transition-all duration-300 transform hover:scale-105"
             >
-              <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/30 transition-colors">
-                <span className="text-blue-400 text-xl">💼</span>
+              <div className="w-12 h-12 bg-gray-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-500/30 transition-colors">
+                <span className="text-gray-400 text-xl">💼</span>
               </div>
               <h3 className="text-white font-semibold mb-2">LinkedIn</h3>
               <p className="text-gray-400">{t("connectWithMe")}</p>
             </a>
 
             <div className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
-              <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-green-400 text-xl">📞</span>
+              <div className="w-12 h-12 bg-gray-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-gray-400 text-xl">📞</span>
               </div>
               <h3 className="text-white font-semibold mb-2">{t("phone")}</h3>
               <p className="text-gray-400">613-294-4133</p>

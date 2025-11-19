@@ -68,7 +68,7 @@ function CompanyCard({ company }: { company: Company }) {
     <div
       ref={tiltRef}
       onClick={handleClick}
-      className="group glass-dark p-8 rounded-2xl cursor-pointer transition-all duration-500 transform-gpu magnetic hover:border-blue-500/50 relative overflow-hidden"
+      className="group glass-dark p-8 rounded-2xl cursor-pointer transition-all duration-500 transform-gpu magnetic hover:border-gray-500/50 relative overflow-hidden"
     >
       {/* Logo Container */}
       <div className="flex items-center justify-center mb-6 h-24">
@@ -90,7 +90,7 @@ function CompanyCard({ company }: { company: Company }) {
       </div>
 
       {/* Company Name */}
-      <h3 className="text-xl font-semibold text-white text-center mb-2 group-hover:neon-blue transition-all duration-300">
+      <h3 className="text-xl font-semibold text-white text-center mb-2 group-hover:neon-white transition-all duration-300">
         {company.name}
       </h3>
 
@@ -100,12 +100,12 @@ function CompanyCard({ company }: { company: Company }) {
       </p>
 
       {/* Hover Effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/0 via-purple-500/0 to-cyan-500/0 group-hover:from-blue-500/10 group-hover:via-purple-500/10 group-hover:to-cyan-500/10 transition-all duration-500 pointer-events-none"></div>
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gray-500/0 via-gray-600/0 to-gray-700/0 group-hover:from-gray-500/10 group-hover:via-gray-600/10 group-hover:to-gray-700/10 transition-all duration-500 pointer-events-none"></div>
 
       {/* Click Indicator */}
       <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center">
-          <span className="text-blue-400 text-xs">↗</span>
+        <div className="w-6 h-6 rounded-full bg-gray-500/20 flex items-center justify-center">
+          <span className="text-gray-400 text-xs">↗</span>
         </div>
       </div>
     </div>
