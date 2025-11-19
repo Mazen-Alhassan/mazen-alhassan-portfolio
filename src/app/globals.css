@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
-/* Red Team Color Variables */
+/* Red Team Color Variables - Darker Theme */
 :root {
-  --background: #0f0f0f;
+  --background: #000000;
   --foreground: #f8f8f8;
   --primary-red: #dc143c;
   --dark-red: #8b0000;
   --gold-accent: #ffd700;
-  --dark-bg: #0f0f0f;
-  --darker-bg: #0a0a0a;
+  --dark-bg: #000000;
+  --darker-bg: #000000;
   --text-white: #f8f8f8;
   --text-gray: #cccccc;
   --glass-bg: rgba(220, 20, 60, 0.1);
@@ -17,13 +17,13 @@
 
 /* Default Red Team theme */
 :root[data-theme="light"] {
-  --background: #050505;
+  --background: #000000;
   --foreground: #f8f8f8;
 }
 
 /* Dark mode (Even darker Red Team theme) */
 :root[data-theme="dark"] {
-  --background: #020202;
+  --background: #000000;
   --foreground: #f0f0f0;
   --primary-red: #ff1744;
   --dark-red: #b71c1c;
@@ -39,7 +39,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #050505;
+    --background: #000000;
     --foreground: #f0f0f0;
   }
 }

@@ -77,6 +77,9 @@ const translations = {
     sportsTitle: "Sports Analytics Platform",
     sportsDescription:
       "Advanced real-time sports analytics platform with multi-API integration, statistical modeling, automated notifications, and comprehensive data visualization",
+    keyStudyTitle: "KeyStudy",
+    keyStudyDescription:
+      "Educational platform providing students with affordable access to study materials and CourseHero documents, making academic resources more accessible and cost-effective for learners",
 
     // Contact Section
     contactTitle: "Let's Connect",
@@ -161,6 +164,9 @@ const translations = {
     sportsTitle: "منصة تحليلات الرياضة",
     sportsDescription:
       "منصة تحليلات رياضية متقدمة في الوقت الفعلي مع تكامل متعدد APIs، النمذجة الإحصائية، الإشعارات الآلية، وتصور البيانات الشامل",
+    keyStudyTitle: "KeyStudy",
+    keyStudyDescription:
+      "منصة تعليمية توفر للطلاب وصولاً ميسور التكلفة إلى المواد الدراسية ومستندات CourseHero، مما يجعل الموارد الأكاديمية أكثر سهولة وفعالية من حيث التكلفة للمتعلمين",
 
     // Contact Section
     contactTitle: "لنتواصل",
