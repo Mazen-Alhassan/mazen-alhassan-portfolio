@@ -60,7 +60,7 @@ export default function Home() {
     <div
       className="min-h-screen relative overflow-x-hidden transition-colors duration-500"
       style={{
-        background: `linear-gradient(to right, #050505 0%, #0f0505 25%, #1a0808 50%, #0f0303 75%, #000000 100%)`,
+        background: `linear-gradient(to right, #000000 0%, #0a0000 25%, #0f0000 50%, #0a0000 75%, #000000 100%)`,
       }}
     >
       <ParticleBackground />
@@ -112,7 +112,7 @@ export default function Home() {
       >
         {/* Dynamic background elements - Darker overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-black/50 via-red-900/40 to-black/60"
+          className="absolute inset-0 bg-gradient-to-r from-black/80 via-red-900/20 to-black/80"
           style={{
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
@@ -191,7 +191,7 @@ export default function Home() {
         className="py-20 px-4 sm:px-6 lg:px-8 relative"
         ref={aboutRef}
         style={{
-          background: `linear-gradient(180deg, transparent 0%, rgba(40, 10, 10, 0.3) 50%, transparent 100%)`,
+          background: `linear-gradient(180deg, transparent 0%, rgba(10, 0, 0, 0.2) 50%, transparent 100%)`,
         }}
       >
         <div className="max-w-7xl mx-auto">
@@ -254,11 +254,11 @@ export default function Home() {
               title={t("socTitle")}
               description={t("socDescription")}
               technologies={["Microsoft Azure", "Sentinel", "Network Security"]}
-              gradient="from-red-500 to-purple-500"
+              gradient="from-gray-700 to-gray-900"
               techColors={[
-                "bg-red-500/20 text-red-300",
-                "bg-purple-500/20 text-purple-300",
-                "bg-blue-500/20 text-blue-300",
+                "bg-gray-700/30 text-gray-300",
+                "bg-gray-800/30 text-gray-300",
+                "bg-gray-900/30 text-gray-300",
               ]}
               features={[
                 "• Real-time threat detection and alerting",
@@ -271,11 +271,11 @@ export default function Home() {
               title={t("ccnaTitle")}
               description={t("ccnaDescription")}
               technologies={["JavaScript", "HTML/CSS", "HTTPS"]}
-              gradient="from-blue-500 to-cyan-500"
+              gradient="from-gray-700 to-gray-900"
               techColors={[
-                "bg-yellow-500/20 text-yellow-300",
-                "bg-orange-500/20 text-orange-300",
-                "bg-green-500/20 text-green-300",
+                "bg-gray-700/30 text-gray-300",
+                "bg-gray-800/30 text-gray-300",
+                "bg-gray-900/30 text-gray-300",
               ]}
               features={[
                 "• Interactive learning modules",
@@ -289,11 +289,11 @@ export default function Home() {
               title={t("mitreTitle")}
               description={t("mitreDescription")}
               technologies={["Python", "NetworkX", "Matplotlib"]}
-              gradient="from-green-500 to-emerald-500"
+              gradient="from-gray-700 to-gray-900"
               techColors={[
-                "bg-green-500/20 text-green-300",
-                "bg-emerald-500/20 text-emerald-300",
-                "bg-cyan-500/20 text-cyan-300",
+                "bg-gray-700/30 text-gray-300",
+                "bg-gray-800/30 text-gray-300",
+                "bg-gray-900/30 text-gray-300",
               ]}
               features={[
                 "• Multi-asset attack flow generation",
@@ -307,11 +307,11 @@ export default function Home() {
               title={t("sportsTitle")}
               description={t("sportsDescription")}
               technologies={["Flask", "Python", "APIs"]}
-              gradient="from-indigo-500 to-purple-500"
+              gradient="from-gray-700 to-gray-900"
               techColors={[
-                "bg-indigo-500/20 text-indigo-300",
-                "bg-purple-500/20 text-purple-300",
-                "bg-blue-500/20 text-blue-300",
+                "bg-gray-700/30 text-gray-300",
+                "bg-gray-800/30 text-gray-300",
+                "bg-gray-900/30 text-gray-300",
               ]}
               features={[
                 "• Real-time multi-API data integration",
@@ -319,6 +319,24 @@ export default function Home() {
                 "• Email/SMS notification system",
               ]}
               websiteUrl="https://github.com/Mazen-Alhassan/sports-analytics-platform"
+            />
+
+            <ProjectCard
+              title={t("keyStudyTitle")}
+              description={t("keyStudyDescription")}
+              technologies={["Web Platform", "Education", "Student Resources"]}
+              gradient="from-gray-700 to-gray-900"
+              techColors={[
+                "bg-gray-700/30 text-gray-300",
+                "bg-gray-800/30 text-gray-300",
+                "bg-gray-900/30 text-gray-300",
+              ]}
+              features={[
+                "• Affordable access to study materials",
+                "• CourseHero document access",
+                "• Cost-effective learning resources",
+              ]}
+              websiteUrl="https://keystudy.org"
             />
           </div>
         </div>
@@ -330,7 +348,7 @@ export default function Home() {
         className="py-12 px-4 sm:px-6 lg:px-8 relative"
         ref={skillsRef}
         style={{
-          background: `linear-gradient(180deg, transparent 0%, rgba(10, 5, 5, 0.5) 50%, transparent 100%)`,
+          background: `linear-gradient(180deg, transparent 0%, rgba(5, 0, 0, 0.3) 50%, transparent 100%)`,
         }}
       >
         <div className="max-w-7xl mx-auto">
@@ -339,9 +357,9 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {/* Programming Languages */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300">
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
-                <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                <span className="w-3 h-3 bg-gray-500 rounded-full mr-3"></span>
                 Programming
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -360,7 +378,7 @@ export default function Home() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm"
+                    className="px-3 py-1 bg-gray-700/30 text-gray-300 rounded-full text-sm"
                   >
                     {skill}
                   </span>
@@ -369,9 +387,9 @@ export default function Home() {
             </div>
 
             {/* Frameworks & Tools */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
-                <span className="w-3 h-3 bg-purple-500 rounded-full mr-3"></span>
+                <span className="w-3 h-3 bg-gray-500 rounded-full mr-3"></span>
                 Frameworks & Tools
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -389,7 +407,7 @@ export default function Home() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm"
+                    className="px-3 py-1 bg-gray-700/30 text-gray-300 rounded-full text-sm"
                   >
                     {skill}
                   </span>
@@ -398,9 +416,9 @@ export default function Home() {
             </div>
 
             {/* Cybersecurity */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
-                <span className="w-3 h-3 bg-red-500 rounded-full mr-3"></span>
+                <span className="w-3 h-3 bg-gray-500 rounded-full mr-3"></span>
                 Cybersecurity
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -414,7 +432,7 @@ export default function Home() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-sm"
+                    className="px-3 py-1 bg-gray-700/30 text-gray-300 rounded-full text-sm"
                   >
                     {skill}
                   </span>
@@ -423,9 +441,9 @@ export default function Home() {
             </div>
 
             {/* Tools & Platforms */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
-                <span className="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
+                <span className="w-3 h-3 bg-gray-500 rounded-full mr-3"></span>
                 Tools & Platforms
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -438,7 +456,7 @@ export default function Home() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm"
+                    className="px-3 py-1 bg-gray-700/30 text-gray-300 rounded-full text-sm"
                   >
                     {skill}
                   </span>
@@ -482,7 +500,7 @@ export default function Home() {
         className="pt-8 pb-20 px-4 sm:px-6 lg:px-8 relative"
         ref={contactRef}
         style={{
-          background: `linear-gradient(180deg, transparent 0%, rgba(25, 10, 10, 0.2) 50%, transparent 100%)`,
+          background: `linear-gradient(180deg, transparent 0%, rgba(5, 0, 0, 0.15) 50%, transparent 100%)`,
         }}
       >
         <div className="max-w-4xl mx-auto text-center">
